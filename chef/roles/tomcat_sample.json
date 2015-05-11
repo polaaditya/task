@@ -1,0 +1,25 @@
+{
+  "name": "tomcat_sample",
+  "default_attributes": {
+    "java": {
+      "install_flavor": "oracle",
+      "jdk_version": "7",
+      "oracle": {
+        "accept_oracle_download_terms": true
+      }
+    },
+    "tomcat": {
+      "base_version": "7",
+      "java_options": "${JAVA_OPTS} -Xmx128M"
+    }
+  },
+  "override_attributes": {},
+  "description": "This installs java, tomcat & student enrollment",
+  "json_class": "Chef::Role",
+  "chef_type": "role",
+  "run_list": [
+    "recipe[java]",
+    "recipe[tomcat]",
+    "recipe[task_tomcat]"
+  ]
+}
